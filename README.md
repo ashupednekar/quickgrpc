@@ -1,3 +1,3 @@
 # FastGrpc-py
 
-
+This is a simple framework to help your kickstart your grpc service development in python, and to publish the same for someone to invoke...

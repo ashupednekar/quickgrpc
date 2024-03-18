@@ -2,22 +2,7 @@
 
 This is a simple framework to help your kickstart your grpc service development in python, and to publish the same for someone to invoke...
 
-<!--
-PLEASE DO NOT POST A QUESTION HERE.
-This form is for bug reports and feature requests ONLY!
-
-For general questions and troubleshooting, please ask/look for answers at StackOverflow, with "grpc" tag: https://stackoverflow.com/questions/tagged/grpc
-
-For questions that specifically need to be answered by gRPC team members, please ask/look for answers at grpc.io mailing list: https://groups.google.com/forum/#!forum/grpc-io
-
-Issues specific to *grpc-java*, *grpc-go*, *grpc-node*, *grpc-dart*, *grpc-web* should be created in the repository they belong to (e.g. https://github.com/grpc/grpc-LANGUAGE/issues/new)
--->
-
-### Is your feature request related to a problem? Please describe.
-When one is getting started with building grpc services in python, the learning curve could be a little steep... I'd like to attempt to simplify the process by generating boilerplate code and a test case to go with it... 
-
-### Describe the solution you'd like
-This is the end result I'd like to achieve... Let's take an example of a simple greeter service.
+Let's go
 
 Here's the proto file
 

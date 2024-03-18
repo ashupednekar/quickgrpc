@@ -1,0 +1,26 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+import shutil
+
+import click
+import vcs
+
+from boilerplate_grpc.helpers import get_python_lib
+
+GRPC_ASSETS_REPO = 'https://github.com/BankBuddy/bud-core-grpc-assets-lib'
+
+
+@click.command()
+@click.option("-m", "--message", required=True, help="commit message")
+@click.option("-n", "--name", required=True, help="rpc name")
+def publish_grpc_service(name, message):
+    repo = vcs.clone_or_fetch(GRPC_ASSETS_REPO)
+    pb_path = f'{get_python_lib()}/grpc_assets/{name}'
+    shutil.rmtree(f'{repo.repo_path}/grpc_assets', ignore_errors=True)
+    shutil.copytree(pb_path, f'{repo.repo_path}/grpc_assets/{name}')
+    vcs.commit_files(repo.repo_path, message, f"grpc_assets/{name}")
+    vcs.push_to_origin(repo.repo_path)
+
+
+if __name__ == "__main__":
+    publish_grpc_service()

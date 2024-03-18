@@ -1,0 +1,115 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+import click
+import openapi_parser
+
+from openapi_parser.specification import Operation
+from typing import Any
+
+from boilerplate_grpc.helpers.file import write_file
+
+
+@click.command()
+@click.option("-f", "--file", required=True)
+def generate_proto(file: str) -> None:
+    openapi = openapi_parser.parse(file)
+    messages = ""
+    methods = f"\nservice {openapi.info.title.title()}{{"
+    paths = openapi.paths
+    for path in paths:
+        for operation in path.operations:
+            method, message = build_protobuf(openapi, operation)
+            methods += method
+            messages += message
+    methods += "\n}"
+    header_message = """
+message User{
+    string username = 1;
+    string email = 2;
+    string user_id = 3;
+}
+
+message Header{
+    User user = 1;
+    string tenant = 2;
+}
+    """
+    protobuf = f'syntax = "proto3";\n{header_message}\n{methods}\n{messages}'
+    write_file(f"{openapi.info.title}.proto", protobuf)
+
+
+def get_protobuf_type(_type):
+    # Map OpenAPI schema types to corresponding Protobuf types
+    type_mapping = {
+        "string": "string",
+        "integer": "int32",
+        "number": "float",
+        "boolean": "bool",
+        "array": "repeated",
+        # Add more types as needed
+    }
+    if _type in type_mapping:
+        return type_mapping[_type]
+    else:
+        return "string"
+
+
+def get_message_entry(obj, rank):
+    proto_type = get_protobuf_type(
+        obj.schema.type.name.lower()
+    )
+    if obj.schema.type.name != "ARRAY":
+        return f'\n\t{proto_type} {obj.name} = {rank};'
+    else:
+        print(obj.name)
+        print(obj.schema)
+        return f'\n\t{proto_type} {obj.name} = {rank};'
+
+
+def build_request_message(operation, title) -> str:
+    request = f"\nmessage {title}Request{{\n\tHeader header = 100;"
+    rank = 1
+    if operation.request_body:
+        for content in operation.request_body.content:
+            for property in content.schema.properties:
+                request += get_message_entry(property, rank)
+                rank += 1
+    if operation.parameters:
+        for param in operation.parameters:
+            request += get_message_entry(param, rank)
+            rank += 1
+    request += "\n}"
+    return request
+
+
+def build_response_message(operation, title) -> str:
+    response = f"\nmessage {title}Response{{\n"
+    rank = 1
+    if operation.responses:
+        for res in operation.responses:
+            if not res:
+                continue
+            if not res.content:
+                continue
+            for content in res.content:
+                for property in content.schema.properties:
+                    response += get_message_entry(property, rank)
+                    rank += 1
+    response += "\n}"
+    return response
+
+
+def build_protobuf(openapi: Any, operation: Operation) -> tuple[str]:
+    # TODO: add array/repeated support
+    # TODO: plan avoiding extra types...
+    name = operation.operation_id
+    title = ''.join([x.title() for x in name.split('_')])
+    method = f"\n  rpc {name}({title}Request) returns ({title}Response);"
+    request_message = build_request_message(operation, title)
+    response_message = build_response_message(operation, title)
+    return method, request_message+response_message
+
+
+if __name__ == "__main__":
+    generate_proto()

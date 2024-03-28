@@ -31,7 +31,7 @@ def get_external_reqs():
 
 # This call to setup() does all the work
 setup(
-    name="boilerplate",
+    name="fastrpc",
     version="5.2.4.0",
     description="boilerplate library",
     long_description=long_description,

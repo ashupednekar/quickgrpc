@@ -50,8 +50,8 @@ setup(
     scripts=[
         "scripts/create_grpc_service",
         "scripts/generate_proto",
-        "publish_grpc_service",
-        "servegrpc"
+        "scripts/publish_grpc_service",
+        "scripts/servegrpc"
     ],
     include_package_data=True,
     #install_requires=[],

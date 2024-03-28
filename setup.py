@@ -54,6 +54,6 @@ setup(
         "servegrpc"
     ],
     include_package_data=True,
-    install_requires=[],
+    #install_requires=[],
     install_requires=get_external_reqs(),
 )

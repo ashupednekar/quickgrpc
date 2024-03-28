@@ -46,7 +46,7 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
     ],
-    packages=["boilerplate"],
+    packages=["fastrpc"],
     scripts=[
         "scripts/runserver",
         "scripts/runworker",

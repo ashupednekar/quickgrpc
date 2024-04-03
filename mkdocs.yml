@@ -1,5 +1,5 @@
-site_name: fastgrpc
-site_url: https://ashupednekar.github.io/fastgrpc
+site_name: quickgrpc
+site_url: https://ashupednekar.github.io/quickgrpc
 nav:
   - Home: index.md
 theme: material

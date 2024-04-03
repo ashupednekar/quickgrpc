@@ -31,9 +31,9 @@ def get_external_reqs():
 
 # This call to setup() does all the work
 setup(
-    name="fastrpc",
-    version="5.2.4.0",
-    description="boilerplate library",
+    name="fastgrpc",
+    version="0.1.0",
+    description="fastgrpc lib library",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/ashupednekar",
@@ -46,14 +46,14 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
     ],
-    packages=["fastrpc"],
+    packages=["fastgrpc"],
     scripts=[
         "scripts/create_grpc_service",
         "scripts/generate_proto",
         "scripts/publish_grpc_service",
-        "scripts/servegrpc"
+        "scripts/servegrpc",
     ],
     include_package_data=True,
-    #install_requires=[],
+    # install_requires=[],
     install_requires=get_external_reqs(),
 )

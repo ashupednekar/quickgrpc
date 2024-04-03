@@ -8,22 +8,27 @@ from grpc_tools import protoc
 
 from boilerplate_grpc.utils import parse_proto_get_services
 from boilerplate_grpc.helpers.file import write_file, read_file
-from boilerplate_grpc.helpers.misc import get_python_lib, sort_imports, format_with_black
+from boilerplate_grpc.helpers.misc import (
+    get_python_lib,
+    sort_imports,
+    format_with_black,
+)
 
-GRPC_ASSETS_REPO = 'https://github.com/BankBuddy/bud-core-grpc-assets-lib'
+GRPC_ASSETS_REPO = "https://github.com/BankBuddy/bud-core-grpc-assets-lib"
 
 
 @click.command()
 @click.option("-c", "--code", default=False)
-@click.option("-f", "--file", required=True, help="Proto path, relative, current directory only")
+@click.option(
+    "-f", "--file", required=True, help="Proto path, relative, current directory only"
+)
 def create_grpc_service(file, code):
-    name = file.replace('.proto', '')
-    pb_path = f'{get_python_lib()}/grpc_assets/{name}'
+    name = file.replace(".proto", "")
+    pb_path = f"{get_python_lib()}/grpc_assets/{name}"
     shutil.rmtree(pb_path, ignore_errors=True)
     generate_grpc_assets(name, file, pb_path)
     if not code:
-        click.echo(
-            "you've passed code preservation, skipping server/client generation")
+        click.echo("you've passed code preservation, skipping server/client generation")
         return
     generate_grpc_server(name, file)
     generate_grpc_client(name, file)
@@ -54,10 +59,10 @@ class {service["name"]}ClientTestCase(TestCase):
         # stub.<your rpc method>(pb2.<your proto message>(params))
         ...
         \n"""
-    Path('tests').mkdir(exist_ok=True, parents=True)
+    Path("tests").mkdir(exist_ok=True, parents=True)
     write_file(f"tests/test_{name}.py", client_code)
-    sort_imports(f'{name}.py')
-    format_with_black('.')
+    sort_imports(f"{name}.py")
+    format_with_black(".")
 
 
 def generate_grpc_server(name, path):
@@ -86,26 +91,32 @@ class {service["name"]}Service({service["name"]}Servicer):\n"""
         '''
         return \n"""
     write_file(f"{name}.py", service_code)
-    sort_imports(f'{name}.py')
-    format_with_black('.')
+    sort_imports(f"{name}.py")
+    format_with_black(".")
 
 
 def generate_grpc_assets(name, path, pb_path):
-    click.echo(f'path: {path}')
-    click.echo(f'pb_path: {pb_path}')
+    click.echo(f"path: {path}")
+    click.echo(f"pb_path: {pb_path}")
     Path(pb_path).mkdir(parents=True, exist_ok=True)
-    protoc.main([
-        '',
-        # '-I', 'rpc/proto/contracts/',namename
-        f'--python_out={pb_path}',
-        f'--grpc_python_out={pb_path}',
-        f'--go_out={pb_path}',
-        f'--go-grpc_out={pb_path}',
-        path
-    ])
-    write_file(f'{pb_path}/{name}_pb2_grpc.py', read_file(f'{pb_path}/{name}_pb2_grpc.py').replace(
-        f"import {name}_pb2 as {name}__pb2", f"import grpc_assets.{name}.{name}_pb2 as {name}__pb2"
-    ))
+    protoc.main(
+        [
+            "",
+            # '-I', 'rpc/proto/contracts/',namename
+            f"--python_out={pb_path}",
+            f"--grpc_python_out={pb_path}",
+            # f'--go_out={pb_path}',
+            # f'--go-grpc_out={pb_path}',
+            path,
+        ]
+    )
+    write_file(
+        f"{pb_path}/{name}_pb2_grpc.py",
+        read_file(f"{pb_path}/{name}_pb2_grpc.py").replace(
+            f"import {name}_pb2 as {name}__pb2",
+            f"import grpc_assets.{name}.{name}_pb2 as {name}__pb2",
+        ),
+    )
 
 
 if __name__ == "__main__":

@@ -5,9 +5,9 @@ import shutil
 import typer
 import os
 
-from fastgrpc.helpers.misc import get_python_lib
-from fastgrpc.helpers.file import write_file
-from fastgrpc.helpers.vcs import clone, commit, push
+from quickgrpc.helpers.misc import get_python_lib
+from quickgrpc.helpers.file import write_file
+from quickgrpc.helpers.vcs import clone, commit, push
 
 ASSETS_PATH = "/tmp/grpc_assets"
 
@@ -35,7 +35,7 @@ setup(
     description="grpc assets library",
     license="MIT",
     classifiers=[
-        "Intended Audience :: fastgrpc lib"
+        "Intended Audience :: quickgrpc lib"
     ],
     packages=["grpc_assets"],
     scripts=[],

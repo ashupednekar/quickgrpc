@@ -7,7 +7,7 @@ import os
 
 import grpc
 import asyncio
-from boilerplate_grpc.utils import add_grpc_service
+from quickgrpc.utils import add_grpc_service
 
 
 from pydantic import Extra

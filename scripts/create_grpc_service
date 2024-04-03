@@ -7,9 +7,9 @@ import typer
 import click
 from grpc_tools import protoc
 
-from boilerplate_grpc.utils import parse_proto_get_services
-from boilerplate_grpc.helpers.file import write_file, read_file
-from boilerplate_grpc.helpers.misc import (
+from quickgrpc.utils import parse_proto_get_services
+from quickgrpc.helpers.file import write_file, read_file
+from quickgrpc.helpers.misc import (
     get_python_lib,
     sort_imports,
     format_with_black,

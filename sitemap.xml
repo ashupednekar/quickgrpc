@@ -1,17 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://ashupednekar.github.io/fastgrpc/</loc>
+         <loc>https://ashupednekar.github.io/quickgrpc/</loc>
          <lastmod>2024-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ashupednekar.github.io/fastgrpc/Get%20Started/</loc>
+         <loc>https://ashupednekar.github.io/quickgrpc/Get%20Started/</loc>
          <lastmod>2024-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://ashupednekar.github.io/fastgrpc/Installation/</loc>
+         <loc>https://ashupednekar.github.io/quickgrpc/Installation/</loc>
          <lastmod>2024-04-03</lastmod>
          <changefreq>daily</changefreq>
     </url>

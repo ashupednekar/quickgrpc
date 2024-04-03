@@ -14,7 +14,7 @@ with open(path.join(HERE, "README.md"), encoding="utf-8") as f:
     long_description = f.read()
 
 
-def get_external_reqs():
+def get_dependencies():
     """
     The get_external_reqs function reads the requirements.txt file and returns a list of strings,
     where each string is an external requirement for this project.
@@ -58,6 +58,5 @@ setup(
         "scripts/servegrpc",
     ],
     include_package_data=True,
-    # install_requires=[],
-    install_requires=get_external_reqs(),
+    install_requires=get_dependencies(),
 )

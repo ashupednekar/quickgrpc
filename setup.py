@@ -47,9 +47,9 @@ setup(
         "Operating System :: OS Independent",
     ],
     project_urls={
-        "Source": "https://github.com/ashupednekar/quickgrpc",  # URL of the source code repository
-        "Documentation": "https://ashupednekar.github.io/quickgrpc",  # URL of the project documentation
-        "Bug Tracker": "https://github.com/ashupednekar/quickgrpc/issues",  # URL of the bug tracker
+        "Source": "https://github.com/ashupednekar/quickgrpc",
+        "Documentation": "https://ashupednekar.github.io/quickgrpc",
+        "Bug Tracker": "https://github.com/ashupednekar/quickgrpc/issues",
     },
     packages=["quickgrpc"],
     scripts=[

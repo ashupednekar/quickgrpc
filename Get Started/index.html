@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://ashupednekar.github.io/fastgrpc/">
+        <link rel="canonical" href="https://ashupednekar.github.io/fastgrpc/Get%20Started/">
       
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
-        <title>fastgrpc</title>
+        <title>QuickGrpc-py - fastgrpc</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickgrpc" class="md-skip">
+        <a href="#quickgrpc-py" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="fastgrpc" class="md-header__button md-logo" aria-label="fastgrpc" data-md-component="logo">
+    <a href=".." title="fastgrpc" class="md-header__button md-logo" aria-label="fastgrpc" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              QuickGrpc-py
             
           </span>
         </div>
@@ -171,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="fastgrpc" class="md-nav__button md-logo" aria-label="fastgrpc" data-md-component="logo">
+    <a href=".." title="fastgrpc" class="md-nav__button md-logo" aria-label="fastgrpc" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -186,19 +186,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -207,7 +198,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -245,12 +235,207 @@
                   
 
 
-<h1 id="quickgrpc">QuickGrpc</h1>
+<h1 id="quickgrpc-py">QuickGrpc-py</h1>
 <p>This is a simple framework to help your kickstart your grpc service development in python, and to publish the same for someone to invoke...</p>
-<p>Welcome to an easy-to-use framework designed to accelerate your development of gRPC services in Python, along with seamless publishing for others to invoke. This framework offers a streamlined approach, allowing you to focus on building robust and efficient gRPC services without getting bogged down in intricate details.</p>
-<p>With clear and concise documentation, this framework simplifies the process of creating and publishing gRPC services, making it accessible for developers of all levels. Whether you're a seasoned expert or just starting out with gRPC, our framework provides the necessary tools and guidance to get you up and running quickly.</p>
-<p>By leveraging this framework, you can harness the power of gRPC to create high-performance, scalable services, enabling seamless communication between distributed systems. Whether you're building microservices, client-server applications, or distributed systems, our framework empowers you to deliver reliable and efficient solutions with ease.</p>
-<p>So, dive in and unleash the potential of gRPC with our comprehensive framework, designed to streamline your development process and accelerate your journey towards building robust and scalable services.</p>
+<p>Let's go</p>
+<p>Here's the proto file</p>
+<pre><code class="language-protobuf">syntax = &quot;proto3&quot;;
+
+service Greet{
+    rpc hi(Inp) returns (Out);
+    rpc bye(Inp) returns (Out);
+}
+
+message Inp{
+  string name = 1;
+}
+
+message Out{
+  string text = 1;
+}
+</code></pre>
+<p>Here's what a day to day workflow should look like.</p>
+<pre><code class="language-bash">~/Desktop via py v3.11.6 (base)
+&gt; tree
+.
+└── rpc
+    └── greet.proto
+
+2 directories, 1 file
+
+~/Desktop via py v3.11.6 (base)
+&gt; cd rpc/
+
+~/Desktop/rpc via py v3.11.6 (base)
+&gt; create_grpc_service -f greet.proto -c yes
+path: greet.proto
+pb_path: /home/ashu/venvs/base/lib/python3.11/site-packages/grpc_assets/greet
+Generating Server Code...
+Parsing protobuf...
+Parsed protobuf: [
+  {
+    &quot;name&quot;: &quot;Greet&quot;,
+    &quot;methods&quot;: [
+      &quot;hi&quot;,
+      &quot;bye&quot;
+    ]
+  }
+]
+Adding service: Greet
+Adding method: hi
+Adding method: bye
+Generating Client Code...
+Parsing protobuf...
+Parsed protobuf: [
+  {
+    &quot;name&quot;: &quot;Greet&quot;,
+    &quot;methods&quot;: [
+      &quot;hi&quot;,
+      &quot;bye&quot;
+    ]
+  }
+]
+Adding service: Greet
+Adding method: hi
+Adding method: bye
+</code></pre>
+<p>This generates, two things... one service class and a test case, like so...</p>
+<pre><code class="language-bash">~/Desktop via py v3.11.6 (base)
+&gt; tree rpc/
+rpc/
+├── greet.proto
+├── greet.py
+└── tests
+    └── test_greet.py
+
+2 directories, 3 files
+</code></pre>
+<p>service</p>
+<pre><code class="language-python">from grpc_assets.greet import greet_pb2
+from grpc_assets.greet.greet_pb2_grpc import GreetServicer
+
+&quot;&quot;&quot;
+Proto
+syntax = &quot;proto3&quot;;
+
+service Greet{
+    rpc hi(Inp) returns (Out);
+    rpc bye(Inp) returns (Out);
+}
+
+message Inp{
+  string name = 1;
+}
+
+message Out{
+  string text = 1;
+}
+
+&quot;&quot;&quot;
+
+
+class GreetService(GreetServicer):
+    def hi(self, context):
+        &quot;&quot;&quot;
+        # TODO: add inputs as per proto
+        # TODO: add logic and return output as per proto
+        &quot;&quot;&quot;
+        return
+
+    def bye(self, context):
+        &quot;&quot;&quot;
+        # TODO: add inputs as per proto
+        # TODO: add logic and return output as per proto
+        &quot;&quot;&quot;
+        return
+</code></pre>
+<p>testcase </p>
+<pre><code class="language-python">from grpc_assets.stub import get_stub
+import grpc_assets.greet.greet_pb2 as pb2
+from unittest import TestCase
+
+
+&quot;&quot;&quot;
+Proto
+syntax = &quot;proto3&quot;;
+
+service Greet{
+    rpc hi(Inp) returns (Out);
+    rpc bye(Inp) returns (Out);
+}
+
+message Inp{
+  string name = 1;
+}
+
+message Out{
+  string text = 1;
+}
+
+&quot;&quot;&quot;
+
+
+class GreetClientTestCase(TestCase):
+    stub = get_stub(&quot;greet&quot;)
+
+    def test_hi(self):
+        # stub.&lt;your rpc method&gt;(pb2.&lt;your proto message&gt;(params))
+        ...
+
+    def test_bye(self):
+        # stub.&lt;your rpc method&gt;(pb2.&lt;your proto message&gt;(params))
+        ...
+</code></pre>
+<p>Then all I have to do is implement the methods...</p>
+<p>Service </p>
+<pre><code class="language-python">class GreetService(GreetServicer):
+    def hi(self, inp, context):
+        print(f&quot;req: {inp}&quot;)
+        return greet_pb2.Out(text=f&quot;Hi {inp.name}&quot;)
+
+    def bye(self, inp, context):
+        print(f&quot;req: {inp}&quot;)
+        return greet_pb2.Out(text=f&quot;Bye {inp.name}&quot;)
+</code></pre>
+<p>Testcase</p>
+<pre><code class="language-python">class GreetClientTestCase(TestCase):
+    stub = get_stub(&quot;greet&quot;)
+
+    def test_hi(self):
+        print(self.stub.hi(pb2.Inp(name=&quot;Ashu&quot;)))
+
+    def test_bye(self):
+        print(self.stub.bye(pb2.Inp(name=&quot;Ashu&quot;)))
+</code></pre>
+<p>That's it, then I should be able to call the service like so...</p>
+<p>server </p>
+<pre><code class="language-bash">~/Desktop via py v3.11.6 (base)
+x export GRPC_PORT=50001
+
+~/Desktop via py v3.11.6 (base)
+&gt; servegrpc
+/home/ashu/venvs/base/bin/servegrpc:21: PydanticDeprecatedSince20: `pydantic.config.Extra` is deprecated, use literal values instead (e.g. `extra='allow'`). Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.3/migration/
+  extra = Extra.ignore
+starting grpc server...
+req: name: &quot;Ashu&quot;
+
+req: name: &quot;Ashu&quot;
+</code></pre>
+<p>client</p>
+<pre><code class="language-bash">&gt; python3 -m unittest rpc.tests.test_greet
+text: &quot;Bye Ashu&quot;
+
+.text: &quot;Hi Ashu&quot;
+
+.
+----------------------------------------------------------------------
+Ran 2 tests in 0.006s
+
+OK
+</code></pre>
+<p>Note, here, I'm storing the protoc generated pb2 files under a package called grpc_assets under site-packages.
+Also,  there's one catch, the code gen logic I wrote has one retriction, proto file name needs to match the main service name, which limits the number of services to 1. </p>
+<p>This can always be improved upon.</p>
 
 
 
@@ -297,10 +482,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

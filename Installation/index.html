@@ -8,21 +8,21 @@
       
       
       
-        <link rel="canonical" href="https://ashupednekar.github.io/fastgrpc/">
+        <link rel="canonical" href="https://ashupednekar.github.io/fastgrpc/Installation/">
       
       
       
       
-      <link rel="icon" href="assets/images/favicon.png">
+      <link rel="icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.5.17">
     
     
       
-        <title>fastgrpc</title>
+        <title>QuickgRPC 0.1.0 Installation Guide - fastgrpc</title>
       
     
     
-      <link rel="stylesheet" href="assets/stylesheets/main.bcfcd587.min.css">
+      <link rel="stylesheet" href="../assets/stylesheets/main.bcfcd587.min.css">
       
       
 
@@ -41,7 +41,7 @@
       
     
     
-    <script>__md_scope=new URL(".",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -60,7 +60,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#quickgrpc" class="md-skip">
+        <a href="#quickgrpc-010-installation-guide" class="md-skip">
           Skip to content
         </a>
       
@@ -76,7 +76,7 @@
 
 <header class="md-header md-header--shadow" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="." title="fastgrpc" class="md-header__button md-logo" aria-label="fastgrpc" data-md-component="logo">
+    <a href=".." title="fastgrpc" class="md-header__button md-logo" aria-label="fastgrpc" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Home
+              QuickgRPC 0.1.0 Installation Guide
             
           </span>
         </div>
@@ -171,7 +171,7 @@
 
 <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="." title="fastgrpc" class="md-nav__button md-logo" aria-label="fastgrpc" data-md-component="logo">
+    <a href=".." title="fastgrpc" class="md-nav__button md-logo" aria-label="fastgrpc" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -186,19 +186,10 @@
       
   
   
-    
   
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-      <a href="." class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -207,7 +198,6 @@
   
 
       </a>
-      
     </li>
   
 
@@ -232,6 +222,41 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#requirements" class="md-nav__link">
+    <span class="md-ellipsis">
+      Requirements
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#installation-steps" class="md-nav__link">
+    <span class="md-ellipsis">
+      Installation Steps
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    <span class="md-ellipsis">
+      Resources
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -245,12 +270,34 @@
                   
 
 
-<h1 id="quickgrpc">QuickGrpc</h1>
-<p>This is a simple framework to help your kickstart your grpc service development in python, and to publish the same for someone to invoke...</p>
-<p>Welcome to an easy-to-use framework designed to accelerate your development of gRPC services in Python, along with seamless publishing for others to invoke. This framework offers a streamlined approach, allowing you to focus on building robust and efficient gRPC services without getting bogged down in intricate details.</p>
-<p>With clear and concise documentation, this framework simplifies the process of creating and publishing gRPC services, making it accessible for developers of all levels. Whether you're a seasoned expert or just starting out with gRPC, our framework provides the necessary tools and guidance to get you up and running quickly.</p>
-<p>By leveraging this framework, you can harness the power of gRPC to create high-performance, scalable services, enabling seamless communication between distributed systems. Whether you're building microservices, client-server applications, or distributed systems, our framework empowers you to deliver reliable and efficient solutions with ease.</p>
-<p>So, dive in and unleash the potential of gRPC with our comprehensive framework, designed to streamline your development process and accelerate your journey towards building robust and scalable services.</p>
+<h1 id="quickgrpc-010-installation-guide">QuickgRPC 0.1.0 Installation Guide</h1>
+<p>QuickgRPC is a lightweight Python library for quickly setting up gRPC (Google Remote Procedure Call) servers and clients. This guide will walk you through the installation process for QuickgRPC version 0.1.0.</p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Python 3.6 or higher</li>
+<li>pip (Python package manager)</li>
+</ul>
+<h2 id="installation-steps">Installation Steps</h2>
+<ol>
+<li>
+<p><strong>Install QuickgRPC</strong>: You can install QuickgRPC using pip. Open your terminal or command prompt and execute the following command:</p>
+<p><code>pip install quickgrpc</code></p>
+</li>
+<li>
+<p><strong>Verify Installation</strong>: Once the installation is complete, you can verify that QuickgRPC is installed correctly by checking the version:</p>
+<p><code>python -c "import quickgrpc; print(quickgrpc.__version__)"</code></p>
+<p>If the installation was successful, you should see the version number of QuickgRPC printed in the terminal.</p>
+</li>
+<li>
+<p><strong>Usage</strong>: Now that QuickgRPC is installed, you can start using it in your Python projects. Refer to the QuickgRPC documentation and examples for guidance on how to set up gRPC servers and clients using QuickgRPC.</p>
+</li>
+</ol>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://ashupednekar.github.io/quickgrpc">QuickgRPC Documentation</a></li>
+<li><a href="https://grpc.io/docs/">gRPC Documentation</a></li>
+</ul>
+<p>That's it! You have successfully installed QuickgRPC 0.1.0 on your system. Happy coding!</p>
 
 
 
@@ -297,10 +344,10 @@
     </div>
     
     
-    <script id="__config" type="application/json">{"base": ".", "features": [], "search": "assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "search": "../assets/javascripts/workers/search.b8dbb3d2.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="assets/javascripts/bundle.1e8ae164.min.js"></script>
+      <script src="../assets/javascripts/bundle.1e8ae164.min.js"></script>
       
     
   </body>

@@ -1,0 +1,20 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "fastgrpc"
+dynamic = ["version"]
+dependencies = [
+  "typer==0.9.0",
+  "openapi3-parser==1.1.10",
+  "black==23.3.0",
+  "isort==5.12.0",
+  "tqdm==4.66.1",
+  "pydantic-settings==2.2.1",
+  "grpcio-tools==1.60.1",
+]
+
+[tool.hatch.build.targets.sdist]
+include = ["fastgrpc/*.py"]
+exclude = ["docs/*"]

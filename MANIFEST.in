@@ -1,2 +1,2 @@
 include requirements.txt
-recursive-include fastgrpc *.py
+recursive-include quickgrpc *.py

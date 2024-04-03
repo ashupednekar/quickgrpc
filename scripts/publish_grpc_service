@@ -3,8 +3,10 @@
 import shutil
 
 import typer
+import os
 
 from fastgrpc.helpers.misc import get_python_lib
+from fastgrpc.helpers.file import write_file
 from fastgrpc.helpers.vcs import clone, commit, push
 
 ASSETS_PATH = "/tmp/grpc_assets"
@@ -14,6 +16,30 @@ def publish_grpc_service(assets_repo_url: str, name: str, message: str):
     clone(assets_repo_url, ASSETS_PATH)
     pb_path = f"{get_python_lib()}/grpc_assets/{name}"
     shutil.copytree(pb_path, f"{ASSETS_PATH}/grpc_assets/{name}")
+    if not os.path.exists("README.md"):
+        write_file(
+            "README.md", "This is where all generated grpc pb wrappers will live"
+        )
+    if not os.path.exists("setup.py"):
+        write_file(
+            "setup.py",
+            """
+from setuptools import setup
+
+setup(
+    name="grpc_assets",
+    version="0.1.0",
+    description="grpc assets library",
+    license="MIT",
+    classifiers=[
+        "Intended Audience :: fastgrpc lib
+    ],
+    packages=["grpc_assets"],
+    scripts=[],
+    include_package_data=True,
+)
+        """,
+        )
     commit(ASSETS_PATH, message)
     push(ASSETS_PATH)
 

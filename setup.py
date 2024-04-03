@@ -46,6 +46,11 @@ setup(
         "Programming Language :: Python :: 3.10",
         "Operating System :: OS Independent",
     ],
+    project_urls={
+        "Source": "https://github.com/ashupednekar/quickgrpc",  # URL of the source code repository
+        "Documentation": "https://ashupednekar.github.io/quickgrpc",  # URL of the project documentation
+        "Bug Tracker": "https://github.com/ashupednekar/quickgrpc/issues",  # URL of the bug tracker
+    },
     packages=["quickgrpc"],
     scripts=[
         "scripts/create_grpc_service",

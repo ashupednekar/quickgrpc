@@ -2,4 +2,4 @@ site_name: fastgrpc
 site_url: https://ashupednekar.github.io/fastgrpc
 nav:
   - Home: index.md
-theme: readthedocs
+theme: material

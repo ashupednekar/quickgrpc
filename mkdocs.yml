@@ -2,4 +2,6 @@ site_name: quickgrpc
 site_url: https://ashupednekar.github.io/quickgrpc
 nav:
   - Home: index.md
+  - Installation: Installation.md
+  - Getting Started: "Getting Started.md"
 theme: material

@@ -35,7 +35,7 @@ setup(
     description="grpc assets library",
     license="MIT",
     classifiers=[
-        "Intended Audience :: fastgrpc lib
+        "Intended Audience :: fastgrpc lib"
     ],
     packages=["grpc_assets"],
     scripts=[],

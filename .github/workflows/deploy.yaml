@@ -19,8 +19,7 @@ jobs:
         with:
           node-version: 18
           cache: yarn
-      - name: change directory
-        run: cd docs
+
       - name: Install dependencies
         run: yarn install --frozen-lockfile
       - name: Build website

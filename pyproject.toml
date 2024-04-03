@@ -1,0 +1,31 @@
+
+[build-system]
+requires = ["setuptools>=42", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.poetry]
+name = "fastgrpc"
+version = "0.1.0"
+description = "fastgrpc lib library"
+authors = ["Ashutosh Pednekar <ashupednekar49@gmail.com>"]
+license = ""
+readme = "README.md"
+homepage = "https://github.com/ashupednekar"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+# External dependencies
+# Add your external dependencies here, either manually or through Poetry commands
+
+[tool.poetry.scripts]
+create_grpc_service = "scripts/create_grpc_service"
+publish_grpc_service = "scripts/publish_grpc_service"
+servegrpc = "scripts/servegrpc"
+
+[tool.poetry.dev-dependencies]
+
+[tool.poetry.extras]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

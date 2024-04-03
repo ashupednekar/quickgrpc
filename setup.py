@@ -49,7 +49,6 @@ setup(
     packages=["fastgrpc"],
     scripts=[
         "scripts/create_grpc_service",
-        "scripts/generate_proto",
         "scripts/publish_grpc_service",
         "scripts/servegrpc",
     ],

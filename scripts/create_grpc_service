@@ -3,6 +3,7 @@
 import shutil
 from pathlib import Path
 
+import typer
 import click
 from grpc_tools import protoc
 
@@ -14,15 +15,8 @@ from boilerplate_grpc.helpers.misc import (
     format_with_black,
 )
 
-GRPC_ASSETS_REPO = "https://github.com/BankBuddy/bud-core-grpc-assets-lib"
 
-
-@click.command()
-@click.option("-c", "--code", default=False)
-@click.option(
-    "-f", "--file", required=True, help="Proto path, relative, current directory only"
-)
-def create_grpc_service(file, code):
+def create_grpc_service(file: str, code: bool = False):
     name = file.replace(".proto", "")
     pb_path = f"{get_python_lib()}/grpc_assets/{name}"
     shutil.rmtree(pb_path, ignore_errors=True)
@@ -120,4 +114,4 @@ def generate_grpc_assets(name, path, pb_path):
 
 
 if __name__ == "__main__":
-    create_grpc_service()
+    typer.run(create_grpc_service)

@@ -1,4 +1,3 @@
-#helpers
 typer==0.9.0
 openapi3-parser==1.1.10
 black==23.3.0

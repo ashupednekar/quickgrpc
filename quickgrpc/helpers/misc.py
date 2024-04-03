@@ -7,7 +7,7 @@ from pathlib import Path
 import black
 import isort
 
-from boilerplate_grpc.helpers.file import write_file
+from quickgrpc.helpers.file import write_file
 
 
 def create_package(name):
@@ -56,8 +56,7 @@ def check_library_installation(library_name):
     try:
         importlib.import_module(library_name)
     except ImportError as e:
-        raise ImportError(
-            f"The library '{library_name}' is not installed.") from e
+        raise ImportError(f"The library '{library_name}' is not installed.") from e
 
 
 def install_library(library_name, token, version=None):

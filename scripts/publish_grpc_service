@@ -13,7 +13,7 @@ ASSETS_PATH = "/tmp/grpc_assets"
 def publish_grpc_service(assets_repo_url: str, name: str, message: str):
     clone(assets_repo_url, ASSETS_PATH)
     pb_path = f"{get_python_lib()}/grpc_assets/{name}"
-    shutil.copytree(pb_path, f"{ASSETS_PATH}/{name}")
+    shutil.copytree(pb_path, f"{ASSETS_PATH}/grpc_assets/{name}")
     commit(ASSETS_PATH, message)
     push(ASSETS_PATH)
 

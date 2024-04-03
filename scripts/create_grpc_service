@@ -31,7 +31,7 @@ def create_grpc_service(file: str, code: bool = False):
 def generate_grpc_client(name, path):
     click.echo("Generating Client Code...")
     client_code = f"""
-from grpc_assets.stub import get_stub
+from quickgrpc.utils import get_stub
 import grpc_assets.{name}.{name}_pb2 as pb2
 from unittest import TestCase
 

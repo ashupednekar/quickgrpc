@@ -1,5 +1,7 @@
 # QuickGrpc-py
 
+[![Python Package Release](https://github.com/ashupednekar/quickgrpc/actions/workflows/CI.yml/badge.svg)](https://github.com/ashupednekar/quickgrpc/actions/workflows/CI.yml)
+
 This is a simple framework to help your kickstart your grpc service development in python, and to publish the same for someone to invoke...
 
 Let's go

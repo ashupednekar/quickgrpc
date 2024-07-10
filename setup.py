@@ -32,7 +32,7 @@ def get_dependencies():
 # This call to setup() does all the work
 setup(
     name="quickgrpc",
-    version="0.1.2",
+    version="0.1.3",
     description="quickgrpc lib library",
     long_description=long_description,
     long_description_content_type="text/markdown",
